@@ -1,0 +1,52 @@
+//Import functions
+@import "../node_modules/bootstrap/scss/functions.scss";
+//Globals
+$enable-rounded: false;
+// $enable-shadows: true;
+
+//Theme colors
+$primary: rgb(191, 0, 255);
+$secondary: rgb(234, 255, 0);
+$dark: rgb(33, 37, 41);
+$light: rgb(187, 219, 31);
+
+//variables + mixins
+@import "../node_modules/bootstrap/scss/variables.scss";
+@import "../node_modules/bootstrap/scss/mixins.scss";
+
+//Custom colours
+$custom-colors: (
+    "primary-light": rgb(224, 102, 255),
+    "secondary-light": rgb(255, 255, 102),
+);
+
+//merge our colours with the theme
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+// //Import Bootstrap.scss
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+// @import "../node_modules/bootstrap/scss/functions";
+ 
+// $enable-rounded: false;
+// $enable-shadows: true;
+ 
+// $primary: rgb(157, 63, 239);
+// $secondary: rgb(107, 97, 113);
+// $dark: rgb(41, 45, 62);
+// $light: rgb(251, 247, 210);
+ 
+ 
+// @import "../node_modules/bootstrap/scss/variables";
+// @import "../node_modules/bootstrap/scss/mixins";
+ 
+ 
+// $custom-colors: (
+//     "primary-light": rgb(237, 222, 249),
+//     "secondary-light": rgb(246, 246, 246)
+// );
+ 
+// $theme-colors: map-merge($theme-colors, $custom-colors );
+ 
+ 
+// @import "../node_modules/bootstrap/scss/bootstrap.scss"
