@@ -1,3 +1,8 @@
+// Import Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Barriecito&family=Yarndings+20&display=swap');
+
+// @import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap');
+
 //Import functions
 @import "../node_modules/bootstrap/scss/functions.scss";
 //Globals
@@ -5,10 +10,16 @@ $enable-rounded: false;
 // $enable-shadows: true;
 
 //Theme colors
-$primary: rgb(191, 0, 255);
-$secondary: rgb(234, 255, 0);
-$dark: rgb(33, 37, 41);
-$light: rgb(187, 219, 31);
+$primary: #3B38A0;
+$secondary: #CBF3BB;
+$dark: #ECF4E8;
+$light: #FFBBE1;
+$success: #B3BFFF;
+$white: #93BFC7;
+$warning: #CD2C58;
+$info: #FFE100;
+$danger: #7A85C1;
+
 
 //variables + mixins
 @import "../node_modules/bootstrap/scss/variables.scss";
@@ -23,30 +34,47 @@ $custom-colors: (
 //merge our colours with the theme
 $theme-colors: map-merge($theme-colors, $custom-colors);
 
-// //Import Bootstrap.scss
+// Colour manipulation functions
+@each $color, $val in $colors {
+    // Base color
+    .bg-#{$color}-500 {
+        background-color: $val
+    }
+
+    // Lightened versions
+    .bg-#{$color}-100 {
+        background-color: tint-color($val, 80%);
+    } 
+    .bg-#{$color}-200 {
+        background-color: tint-color($val, 60%);
+    } 
+    .bg-#{$color}-300 {
+        background-color: tint-color($val, 40%);
+    }
+    .bg-#{$color}-400 {
+        background-color: tint-color($val, 20%);
+    }
+
+    // Darkened versions
+    .bg-#{$color}-600 {
+        background-color: shade-color($val, 20%)
+    }
+    .bg-#{$color}-700 {
+        background-color: shade-color($val, 40%)
+    }
+    .bg-#{$color}-800 {
+        background-color: shade-color($val, 60%)
+    }
+    .bg-#{$color}-900 {
+        background-color: shade-color($val, 80%)
+    }
+}
+
+// Font Families
+$font-family-base: 'Yarndings 20', sans-serif;
+
+//Import Bootstrap.scss
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
-// @import "../node_modules/bootstrap/scss/functions";
- 
-// $enable-rounded: false;
-// $enable-shadows: true;
- 
-// $primary: rgb(157, 63, 239);
-// $secondary: rgb(107, 97, 113);
-// $dark: rgb(41, 45, 62);
-// $light: rgb(251, 247, 210);
- 
- 
-// @import "../node_modules/bootstrap/scss/variables";
-// @import "../node_modules/bootstrap/scss/mixins";
- 
- 
-// $custom-colors: (
-//     "primary-light": rgb(237, 222, 249),
-//     "secondary-light": rgb(246, 246, 246)
-// );
- 
-// $theme-colors: map-merge($theme-colors, $custom-colors );
- 
- 
-// @import "../node_modules/bootstrap/scss/bootstrap.scss"
+@import "../node_modules/bootstrap/scss/functions";
+
